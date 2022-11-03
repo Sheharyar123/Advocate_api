@@ -1,8 +1,13 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from rest_framework import generics
 
-# Create your views here.
-def endpoints(request):
-    data = ["/advocates", "/advocates/:username"]
-    return JsonResponse(data, safe=False)
+from .models import Advocate
+from .serializers import AdvocateSerializer
+
+
+class AdvocateList(generics.ListAPIView):
+    queryset = Advocate.objects.all()
+    serializer_class = AdvocateSerializer
+
+
+
 

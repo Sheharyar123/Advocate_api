@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # My own apps
+    # Third party
+    'rest_framework',
+     # Local
     "base.apps.BaseConfig",
 ]
 
