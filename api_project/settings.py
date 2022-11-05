@@ -38,12 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django.contrib.sites",
     # Third party
     "rest_framework",
     "corsheaders",
     # Local
     "base.apps.BaseConfig",
+    "user.apps.UserConfig",
 ]
 
 
@@ -153,3 +153,6 @@ SIMPLE_JWT = {
 
 # Cors Headers Configuration
 CORS_ALLOW_ALL_ORIGINS = True
+
+# Custom User Model
+AUTH_USER_MODEL = "user.CustomUser"
