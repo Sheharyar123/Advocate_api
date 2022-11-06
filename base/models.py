@@ -8,6 +8,9 @@ class Company(models.Model):
 
     class Meta:
         verbose_name_plural = "companies"
+        ordering = [
+            "id",
+        ]
 
     def __str__(self):
         return self.name
@@ -21,6 +24,11 @@ class Advocate(models.Model):
     bio = models.TextField(null=True, blank=True)
     twitter = models.URLField(unique=True, null=True, blank=True)
     profile_pic = models.ImageField(upload_to="profile_pics", null=True, blank=True)
+
+    class Meta:
+        ordering = [
+            "id",
+        ]
 
     def __str__(self):
         return self.username

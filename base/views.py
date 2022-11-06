@@ -5,11 +5,13 @@ from rest_framework import generics
 
 from .models import Advocate, Company
 from .serializers import AdvocateSerializer, CompanySerializer
+from .paginations import CustomPagination
 
 
 class AdvocateList(generics.ListCreateAPIView):
     # queryset = Advocate.objects.all()
     serializer_class = AdvocateSerializer
+    pagination_class = CustomPagination
 
     def get_queryset(self):
         query = self.request.GET.get("query")
@@ -32,6 +34,7 @@ class AdvocateDetail(generics.RetrieveUpdateDestroyAPIView):
 class CompanyList(generics.ListCreateAPIView):
     # queryset = Company.objects.all()
     serializer_class = CompanySerializer
+    pagination_class = CustomPagination
 
     def get_queryset(self):
         query = self.request.GET.get("query")
