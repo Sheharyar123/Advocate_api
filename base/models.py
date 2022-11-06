@@ -23,7 +23,7 @@ class Advocate(models.Model):
     username = models.CharField(max_length=100)
     bio = models.TextField(null=True, blank=True)
     twitter = models.URLField(unique=True, null=True, blank=True)
-    profile_pic = models.ImageField(upload_to="profile_pics", null=True, blank=True)
+    profile_pic = models.URLField(null=True, blank=True)
 
     class Meta:
         ordering = [
