@@ -173,3 +173,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # Custom User Model
 AUTH_USER_MODEL = "user.CustomUser"
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
